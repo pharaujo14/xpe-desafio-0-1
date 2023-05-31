@@ -1,14 +1,11 @@
 provider "aws" {
-  region = var.aws_region
-  version = "~> 3.7"
-
+  region  = var.aws_region
+  version = "~> 3.37"
 }
 
-
 terraform {
-
   backend "s3" {
-      bucket = "terraform-state-igti-paulo"
-      region = "us-east-2"
+    bucket = "terraform-state-igti-paulo"
+    region = var.aws_region
   }
 }
